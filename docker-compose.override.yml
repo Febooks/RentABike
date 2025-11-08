@@ -1,0 +1,15 @@
+version: '3.8'
+
+# Override para desenvolvimento local
+# Use: docker-compose -f docker-compose.yml -f docker-compose.override.yml up
+
+services:
+  api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8080:8080"
+      - "5000:8080"
+    volumes:
+      - ./src/RentABike.API/wwwroot/uploads:/app/wwwroot/uploads
+
